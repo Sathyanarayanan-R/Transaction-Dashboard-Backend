@@ -367,8 +367,8 @@ export const getAllAPIData = async (req, res) => {
     const month = req.params.month;
 
     const { data: salesData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlysale/${month}`);
-    const { data: priceRangeData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlysale/${month}`);
-    const { data: productCategoriesData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlysale/${month}`);
+    const { data: priceRangeData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlypricerange/${month}`);
+    const { data: productCategoriesData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlycategories/${month}`);
     
     const All3APIData = [
       { month: month },
