@@ -360,27 +360,16 @@ export const getMonthlyCategories = async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-};
+}
 
 export const getAllAPIData = async (req, res) => {
   try {
     const month = req.params.month;
 
-    const BASE_URL = "https://transaction-dashboard-backend-sj.onrender.com/";
-    const urlPath = [
-      "monthlysale/",
-      "monthlypricerange/",
-      "monthlycategories/",
-    ];
-
-    const { data: salesData } = await axios.get(BASE_URL + urlPath[0] + month);
-    const { data: priceRangeData } = await axios.get(
-      BASE_URL + urlPath[1] + month
-    );
-    const { data: productCategoriesData } = await axios.get(
-      BASE_URL + urlPath[2] + month
-    );
-
+    const { data: salesData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlysale/${month}`);
+    const { data: priceRangeData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlysale/${month}`);
+    const { data: productCategoriesData } = await axios.get(`https://transaction-dashboard-backend-sj.onrender.com/products/monthlysale/${month}`);
+    
     const All3APIData = [
       { month: month },
       salesData,
