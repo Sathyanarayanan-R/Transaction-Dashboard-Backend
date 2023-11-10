@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json({ limit: '30mb', extended: true }))
 app.use(express.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+app.use(cors({origin: "https://transaction-dashboard-backend-sj.onrender.com"}));
 
 app.use("/seeddata", seedDataRoute);
 app.use("/products", productRoutes);
