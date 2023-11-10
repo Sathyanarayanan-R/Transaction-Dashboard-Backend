@@ -362,11 +362,11 @@ export const getMonthlyCategories = async (req, res) => {
   }
 };
 
-export const getAllAPIData = async (req, res) => {
+export const getAll3APIData = async (req, res) => {
   try {
     const month = req.params.month;
 
-    const BASE_URL = "http://localhost:5000/products/";
+    const BASE_URL = "https://transaction-dashboard-backend-sj.onrender.com/";
     const urlPath = [
       "monthlysale/",
       "monthlypricerange/",
