@@ -362,7 +362,7 @@ export const getMonthlyCategories = async (req, res) => {
   }
 };
 
-export const getAll3APIData = async (req, res) => {
+export const getAllAPIData = async (req, res) => {
   try {
     const month = req.params.month;
 
